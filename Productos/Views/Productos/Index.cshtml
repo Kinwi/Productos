@@ -1,0 +1,39 @@
+﻿@*@model List<Producto>*@
+
+
+@{
+    ViewData["Title"] = "Index";
+
+    //List <Producto> productos = ViewData["productos"] as List <Producto>;
+    //List<Producto> productos = (List <Producto>)ViewData["productos"];
+    //string saludo = (string)ViewData["saludo"];
+    string nombre = ViewBag.Nombre as string;
+
+}
+
+<h1>Frutas del Mundo</h1>
+
+<div class="row">
+    @foreach (Producto Producto in productos)
+    @*@foreach (Producto Producto in Model)*@
+    {
+        <div class="card col-12 col-sm-6 col-lg-4" style="width: 18rem; ">
+            <img src="@Producto.Imagen" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">@Producto.Nombre</h5>
+                <p class="card-text">@Producto.Descripcion</p>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">@Producto.Tipo</li>
+                <li class="list-group-item">@Producto.Precio</li>
+                <li class="list-group-item">@Producto.FechaCaducidad</li>
+
+            </ul>
+
+        </div>
+
+    }
+</div>
+
+
+

@@ -1,0 +1,22 @@
+﻿@model List<Producto>
+@{
+    ViewData["Title"] = "ProductosPrecio";
+}
+
+<h1>Precio Frutas</h1>
+
+<div class="row">
+    @foreach (Producto Producto in Model)
+    {
+        <div class="card col-12 col-sm-6 col-lg-4"  style="width: 18rem;">
+            <img src="@Producto.Imagen" class="card-img-top" alt="...">
+            <div class="card-body ">
+                <h5 class="card-title">@Producto.Nombre</h5>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">@Producto.Precio</li>
+            </ul>
+        </div>
+    }
+</div>
+
