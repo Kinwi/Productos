@@ -1,4 +1,4 @@
-﻿@*@model List<Producto>*@
+﻿@model List<Producto>
 
 
 @{
@@ -11,11 +11,16 @@
 
 }
 
+<form asp-controller="Productos" asp-action="Index">
+    <input type="text" placeholder="Nombre" name="nombre" />
+    <input type="submit" value="Buscar" />
+</form>
+
 <h1>Frutas del Mundo</h1>
 
 <div class="row">
-    @foreach (Producto Producto in productos)
-    @*@foreach (Producto Producto in Model)*@
+    @*@foreach (Producto Producto in productos)*@
+    @foreach (Producto Producto in Model)
     {
         <div class="card col-12 col-sm-6 col-lg-4" style="width: 18rem; ">
             <img src="@Producto.Imagen" class="card-img-top" alt="...">
